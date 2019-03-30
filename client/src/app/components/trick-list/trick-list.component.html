@@ -1,0 +1,29 @@
+<div class="container p-4">
+  <div class="row">
+    <div class="card-columns animated fadeInUp" >
+      <div class="card" *ngFor="let trick of tricks">
+        <img [src]="trick.image" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ trick.title }}
+          </h5>         
+          <p class="card-text">
+            {{ trick.description }} <br>
+          </p>
+          <p class="card-text text-left">
+            <a target="_blank" href="{{ trick.link }}" class=""><small><b>LINK</b></small></a>
+          </p>
+
+          <a [routerLink]="['/tricks/edit',trick.id]" class="btn btn-info btn-block" (click)="editTrick(trick.id)">EDIT TRICK</a>
+          <button class="btn btn-danger btn-block" (click)="deleteTrick(trick.id)">
+            <i class="far fa-trash-alt"></i>
+          </button>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

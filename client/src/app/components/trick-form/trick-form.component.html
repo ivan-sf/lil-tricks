@@ -1,0 +1,23 @@
+<div class="col-md-4 offset-md-2 animated fadeInUp">
+  <div class="card">
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <input type="text" name="title" [(ngModel)]="trick.title" placeholder="Title" class="form-control" autofocus><br>
+          <input type="text" name="description" [(ngModel)]="trick.description" placeholder="Description" class="form-control"><br>
+          <input type="text" name="image" [(ngModel)]="trick.image" placeholder="Image" class="form-control"><br>
+          <input type="text" name="link" [(ngModel)]="trick.link" placeholder="Link" class="form-control"><br>
+          <button class="btn btn-success btn-block" (click)="edit ? updateTrick() : saveNewTrick()">SAVE TRICK !</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 animated fadeInUp">
+  <div class="card card-body text-center">
+    <img [src]="trick.image == '' ? '/assets/noimage.jpg' : trick.image" class="card-img-top"><br>
+    <h3> {{trick.title == '' ? 'Insert title' : trick.title}} </h3>
+    <p> {{trick.description == '' ? 'Insert description' : trick.description}} </p>
+  </div>
+</div>
